@@ -1,3 +1,10 @@
+# About
+
+`gnome-settings` stores individual dconf configs. It is a tool to quickly load and dump them, primarily as a backup between machines.
+
+I guess technically things other than gnome use dconf. Whatever.
+
+
 # Installation
 
 `git clone git@github.com:bclarkx2/gnome-settings`

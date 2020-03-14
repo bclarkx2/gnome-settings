@@ -1,0 +1,19 @@
+#!/usr/bin/env bash 
+
+# Params
+setting=$1
+
+if [[ -z "$setting" ]] ; 
+then
+	echo "Missing: setting name to load" 1>&2
+	exit 1
+fi
+
+
+# Setup
+path_file="${setting}/path"
+conf_file="${setting}/settings.conf"
+read -r path < $path_file
+
+# Exec
+cat $conf_file && dconf load "$path" < $conf_file

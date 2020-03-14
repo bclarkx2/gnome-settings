@@ -1,0 +1,14 @@
+#!/usr/bin/env bash 
+
+# Params
+setting=$1
+
+if [[ -z "$setting" ]] ; 
+then
+	echo "Missing: setting name to list" 1>&2
+	exit 1
+fi
+
+
+# Exec
+cat "${setting}/settings.conf"

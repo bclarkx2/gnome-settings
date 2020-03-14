@@ -1,0 +1,20 @@
+#!/usr/bin/env bash 
+
+# helpers
+help_msg="Usage: $(basename $0) cmd"
+show_help() {
+	echo "$help_msg" 1>&2
+}
+
+# Params
+cmd="$1"
+
+if [[ -z "$cmd" ]] ; then
+	show_help
+	exit 1
+fi
+
+
+# Exec
+find . -mindepth 1 -maxdepth 1 -type d -not -path '*/\.*' -exec "./$cmd" {} \;
+

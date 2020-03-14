@@ -1,0 +1,30 @@
+#!/usr/bin/env bash 
+
+# helpers
+help_msg="Usage: $(basename $0) setting_name gconf_path"
+show_help() {
+	echo "$help_msg" 1>&2
+}
+
+# Params
+setting="$1"
+path="$2"
+
+if [[ -z "$setting" ]] ; then
+	show_help
+	exit 1
+elif [[ -z "$path" ]] ; then
+	show_help
+	exit 1
+fi
+
+
+# Setup
+path_file="${setting}/path"
+conf_file="${setting}/settings.conf"
+
+
+# Exec
+mkdir "$setting"
+touch "$conf_file"
+echo "$path" > "$path_file"
